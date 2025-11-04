@@ -28,19 +28,44 @@ Step	Tool	Purpose
 
 💡 Key point: PyCharm edits, DBeaver runs, GitHub stores. That’s the typical separation.
 
-Run Your SQL Scripts in DBeaver
+2. Run Your SQL Scripts in DBeaver
+Step-by-Step: Open .sql File in DBeaver
 
-In the Database Navigator, right-click your database → SQL Editor → New SQL Script.
+Open DBeaver and make sure your database is connected.
 
-In the editor that opens:
+Your SQLite database:
+/Users/zineb/Pycharm/September/DatabaseTechnology-25/mydatabase.db
 
-Either copy-paste your SQL from setup.sql, or
+Open SQL Editor
 
-Click Open File and select setup.sql.
+Right-click your database in the Database Navigator (left panel) → SQL Editor → New SQL Script.
 
-Click the green ▶️ Execute button (or press ⌘ + Enter) to run all the SQL commands.
+This opens a blank SQL terminal/editor.
+
+Open the File
+
+In the SQL Editor, go to the top menu → File → Open File… (or press Ctrl+O / Cmd+O).
+
+A file browser will open.
+
+Navigate to Your File
+
+Browse to your project folder:
+/Users/zineb/Pycharm/September/DatabaseTechnology-25/
+
+Select your SQL file, e.g., create_students_table.sql.
+
+Click Open.
+
+Run the Script
+
+The file contents appear in the SQL Editor.
+
+Click the green Execute (▶️) button (or press Ctrl+Enter / Cmd+Enter).
 
 You can now see the tables you created in the Database Navigator → Tables section.
+
+if DBeaver is telling you “no active connection” because the SQL Editor is not currently linked to a database. Each SQL Editor must be connected to a database before you can execute anything.
 
 To check data:
 
