@@ -1,5 +1,5 @@
 
--- bcs i go from python to .sql i need to run this script as a SQL query.
+-- bcs I go from python to .sql i need to run this script as a SQL query.
 -- I am using PyCharm Community Edition, which doesn't have built-in database tools
 -- so writing the file doesn’t run the SQL — it’s just text until you execute it using a database engine.
 -- I need to use an external tool (such as MySQL Workbench, DBeaver, or SQLite3 command-line tools) to run my .sql file.
