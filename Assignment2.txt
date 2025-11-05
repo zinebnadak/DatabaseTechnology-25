@@ -1,0 +1,60 @@
+* What is the world database?
+
+It’s a sample database provided by MySQL.
+It contains realistic data about countries, cities, and languages, which makes it perfect for learning SQL.
+It has multiple tables:
+country → information about countries (name, population, GNP, etc.)
+city → information about cities (name, population, district, country code)
+countrylanguage → which languages are spoken in which countries
+By importing it, you now have a ready-made dataset to practice queries on.
+
+* Here’s the simplified workflow:
+
+Install MySQL
+Using Homebrew: brew install mysql  (Homebrew is a free and open-source package manager that lets you easily install, update, and manage software on macOS and Linux from the command line)
+Start the MySQL service: brew services start mysql
+Secure MySQL (MySQL is a relational database management system (RDBMS), It stores, organizes, and retrieves data for applications.)
+Run: mysql_secure_installation
+This sets a root password, removes test databases, and restricts access. (root password is the password for the root user, which is the most powerful user account on a system or in a database. Think of it like the “administrator key” that has full control over everything. Root password is the password needed to log in as root or perform superuser actions if sudo isn’t used. )
+Lesson: Always secure your database before using it seriously.
+Log in to MySQL
+Command: mysql -u root -p
+-u root → username is root
+-p → prompt for password
+Import the database
+You downloaded the world.sql file (or ZIP) and unzipped it.
+Command:
+mysql -u root -p < ~/Downloads/world-db/world.sql
+This reads the .sql file and creates all tables and fills them with data.
+Check that it worked
+SHOW DATABASES; → lists all databases, including world
+USE world; → select it for queries
+SHOW TABLES; → shows all tables in the world database
+
+* Lesson Summary
+The “lesson” is:
+Install MySQL and make sure the service is running.
+Secure it with a root password.
+Log in as root and confirm it works.
+Import your .sql file to create a database and tables.
+Verify that the database and tables exist.
+You can now write SQL queries against the tables.
+
+Think of world.sql as a “recipe” that tells MySQL:
+Create a database called world
+Create tables like country, city, countrylanguage
+Fill them with data
+
+An SQL query is a command you type to retrieve or manipulate data. example SELECT * FROM country;
+
+
+Your assignment basically has three parts:
+
+Basic SQL queries – retrieving data from tables (SELECT statements, WHERE, ORDER BY)
+Aggregate functions & grouping – counting, summing, averaging, grouping data (COUNT, SUM, AVG, GROUP BY)
+Subqueries – queries within queries to filter or calculate based on other results
+
+Since you now have the world database installed in MySQL, you’ll be writing SQL queries against its tables (country, city, countrylanguage).
+
+
+✅ For learning SQL and completing this assignment, I recommend start in the terminal first. Later you can move queries into PyCharm if needed.
