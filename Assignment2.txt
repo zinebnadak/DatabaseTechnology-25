@@ -58,3 +58,34 @@ Since you now have the world database installed in MySQL, you’ll be writing SQ
 
 
 ✅ For learning SQL and completing this assignment, I recommend start in the terminal first. Later you can move queries into PyCharm if needed.
+
+prompt: okey now lets start with the assignment as instructed , tell me exactly what platform to open what to write and how to do it and explain in a way as its my first time ever working with databases and this sort of stuff
+
+
+How to Work Through Your Assignment
+
+The assignment gives questions like 1a, 1b, etc.
+Read the question carefully
+Figure out which table it relates to (country, city, countrylanguage).
+Open MySQL terminal.
+Type the query.
+Copy the result into your assignment document.
+Mark that you completed that question in the table (1a, 1b, etc.).
+
+se document for answers!
+
+
+first :
+mysql -u your_username -p
+mysql>
+
+then: List databases
+SHOW DATABASES;
+You should see world listed among them.
+---> USE world;
+Database changed
+
+then: Check the tables
+SHOW TABLES;
+
+lastly Run your queries
