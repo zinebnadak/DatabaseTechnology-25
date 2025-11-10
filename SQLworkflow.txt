@@ -1,283 +1,95 @@
 
--- bcs I go from python to .sql i need to run this script as a SQL query.
+-- bcs I go from python to .sql I need to run this script as a SQL query.
 -- I am using PyCharm Community Edition, which doesn't have built-in database tools
 -- so writing the file doesn’t run the SQL — it’s just text until you execute it using a database engine.
 -- I need to use an external tool (such as MySQL Workbench, DBeaver, or SQLite3 command-line tools) to run my .sql file.
 
-sqlite3 --version
-sqlite3 mydatabase.db
-.read path/to/yourfile.sql
-
-If you want a graphical interface:
-For SQLite:
-Choose the .db file you created earlier.
-✅ Done! You can see your tables and data in the sidebar.
-
 Regardless of which database you use: .sql files are plain text in GitHub
 
----------------------------------------------------------------------
-Your Workflow Overview
+When you start a work session:
 
-Here’s the standard workflow when working with .sql files in a project:
+Task	        Tool	            Done
+Open project    PyCharm	            PyCharm
+Open DB         connection	        DBeaver
+Create/edit     .sql file	        PyCharm
+Run             SQL on DB	        DBeaver
+Verify          tables/data	        DBeaver
+Commit changes  GitHub	            Terminal
 
-Step	Tool	Purpose
-1	PyCharm	Write or edit .sql files (like setup.sql, insert_data.sql, etc.)
-2	DBeaver	Connect to your database (mydatabase.db) and run SQL scripts to create tables, insert data, or query data
-3	GitHub	Version control your .sql files so you can share or collaborate
-4	Optional	Python scripts or apps can also connect to mydatabase.db to use the data
-
-💡 Key point: PyCharm edits, DBeaver runs, GitHub stores. That’s the typical separation.
-
-2. Run Your SQL Scripts in DBeaver
-Step-by-Step: Open .sql File in DBeaver
-
-Open DBeaver and make sure your database is connected.
-
-Your SQLite database:
-/Users/zineb/Pycharm/September/DatabaseTechnology-25/mydatabase.db
-
-Open SQL Editor
-
-Right-click your database in the Database Navigator (left panel) → SQL Editor → New SQL Script.
-
-This opens a blank SQL terminal/editor.
-
-Open the File
-
-In the SQL Editor, go to the top menu → File → Open File… (or press Ctrl+O / Cmd+O).
-
-A file browser will open.
-
-Navigate to Your File
-
-Browse to your project folder:
-/Users/zineb/Pycharm/September/DatabaseTechnology-25/
-
-Select your SQL file, e.g., create_students_table.sql.
-
-Click Open.
-
-Run the Script
-
-The file contents appear in the SQL Editor.
-
-Click the green Execute (▶️) button (or press Ctrl+Enter / Cmd+Enter).
-
-You can now see the tables you created in the Database Navigator → Tables section.
-
-if DBeaver is telling you “no active connection” because the SQL Editor is not currently linked to a database. Each SQL Editor must be connected to a database before you can execute anything.
-
-To check data:
-
-Right-click a table (e.g., users) → View Data → All Rows.
-
-Now you can visually confirm your database contents.
-
-3️⃣ Keep Your .sql Files in GitHub
-
-Even though DBeaver edits the database, you do not commit the .db file (optional, usually only for small projects). Instead:
-
-Make sure setup.sql is in your GitHub repo (it should be in your PyCharm project folder).
-
-In PyCharm Terminal:
-
-git status       # See untracked files
-git add setup.sql
-git commit -m "Add initial SQL setup"
-git push
-
-
-Now your .sql script is versioned. Anyone else can run it on their own SQLite database and get the same tables/data.
-
-This is how developers share SQL: the script files, not always the actual .db database.
-
-4️⃣ Editing / Updating
-
-If you want to add new tables or data:
-
-Edit or create a new .sql file in PyCharm (e.g., insert_more_data.sql).
-
-Run it in DBeaver on your database.
-
-Commit the new .sql file to GitHub.
-
-This way, your SQL workflow is fully version controlled and reproducible.
-
-5️⃣ Optional: Automate Running SQL from Python
-
-Later, you can even write a Python script that connects to your SQLite database and runs your .sql files automatically using the sqlite3 library:
-
-import sqlite3
-
-conn = sqlite3.connect("mydatabase.db")
-cursor = conn.cursor()
-
-with open("setup.sql") as f:
-    sql_script = f.read()
-
-cursor.executescript(sql_script)
-conn.commit()
-conn.close()
-
-
-This is how many developers integrate SQL into Python projects while keeping .sql scripts in GitHub.
-
-
-✅ Summary
-
-Write/edit .sql in PyCharm.
-Run .sql in DBeaver to see tables and data.
-Commit .sql to GitHub for version control.
-Repeat — create new scripts as your project grows.
-
-
-
-
-
-
+--------> Optional: Setting up once for efficiency
+Create folders in PyCharm:
+- sql/ for scripts
+- python/ for integration scripts
+- Configure DBeaver to auto-connect on startup.
+- Use descriptive file names (e.g., v1_setup.sql, v2_alter_table.sql).
+- Keep your .db file in the same repo so Python and DBeaver point to the same path.
 
 ---------------------------------------------------------------------
---- From the beginning ---
+WORKFLOW OVERVIEW
 
-Step 0: Project setup
+(when working with databases in Pycharm + DBeaver + GitHub)
 
-Repo path:
-
+Step 0 — Prep: Open your tools
+1. Open PyCharm → open your project folder:
 /Users/zineb/Pycharm/September/DatabaseTechnology-25
-
-
-You already have it cloned to PyCharm and it’s connected to GitHub.
-
-Step 1: Create a new SQL file in PyCharm
-
-In PyCharm, right-click the repo folder → New → File.
-
-Name it something descriptive, e.g.:
-
-create_students_table.sql
-
-
-Inside the file, write your SQL commands. Example:
-
--- create a table called students
-CREATE TABLE IF NOT EXISTS students (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    major TEXT
-);
-
--- insert some sample data
-INSERT INTO students (name, major)
-VALUES
-('Alice', 'Computer Science'),
-('Bob', 'Mathematics');
-
-
-Save the file.
-✅ This is now part of your repo folder.
-
-Step 2: Run the SQL file in DBeaver
-
-Open DBeaver → make sure your SQLite connection is pointing to:
-
+2. Open DBeaver → ensure your SQLite database connection points to:
 /Users/zineb/Pycharm/September/DatabaseTechnology-25/mydatabase.db
+3. (Optional) Open Terminal in PyCharm for Git commands.
 
+✅ You now have:
+PyCharm → write SQL and Python.
+DBeaver → run SQL.
+GitHub (through terminal) → version control.
 
-Right-click the database → SQL Editor → New SQL Script.
+Step 1 — Create or edit your .sql file in PyCharm
+1. Write your SQL inside a file
+(Tip: keep your .sql files organized in a folders)
 
-Open the SQL file you just created (or copy/paste its contents into the editor).
+Step 2 — Run SQL in DBeaver
+1. Confirm your connection is active (no red “X”). If not: right-click → Connect.
+2. Right-click your database → SQL Editor → New SQL Script.
+3. Open your file: File → Open File → select create_students_table.sql
+4. Click the green ▶️ Execute button (or Ctrl+Enter / Cmd+Enter).
+5. Check tables in the Database Navigator → Tables → View Data → All Rows. Your database now reflects the changes from your SQL script.
 
-Click Execute (green ▶️).
-
-DBeaver will now create the students table and insert your data.
-
-Expand the database → Tables → students → View Data → All Rows to see Alice and Bob.
-
-Step 3: Commit your SQL file to GitHub
-
-In PyCharm Terminal:
-
-cd /Users/zineb/Pycharm/September/DatabaseTechnology-25
+Step 3 — Version control (GitHub)
+1. In the PyCharm Terminal:
 git status
-
-
-You should see your new SQL file listed. Then:
-
-git add create_students_table.sql
-git commit -m "Add create_students_table.sql with initial sample data"
+git add sql/create_students_table.sql
+git commit -m "Add create_students_table.sql with initial data"
 git push
 
+- This keeps your SQL scripts versioned — so others (or future you) can re-run them anywhere.
+- GitHub stores .sql, not .db (unless it’s a demo).
 
-✅ Your SQL file is now versioned and stored in GitHub.
-
-Other team members can clone the repo, run this SQL file on their own database, and get the same tables/data.
-
-Step 4: Workflow for future SQL files
-
-Every time you want to create a new table or update the database, follow this pattern:
-
-PyCharm → create a new .sql file in the repo, e.g.:
-
-add_courses_table.sql
-
-
-Write the SQL commands. Example:
-
-CREATE TABLE IF NOT EXISTS courses (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    course_name TEXT,
-    credits INTEGER
-);
-
-INSERT INTO courses (course_name, credits)
-VALUES ('Databases', 5), ('Algorithms', 4);
-
-
-DBeaver → open the database → run this .sql file.
-
-Verify tables/data in DBeaver.
-
-GitHub → commit the .sql file.
-
-Repeat this process — each .sql file is a versioned, reusable script.
-
-Step 5: Optional — Python integration
-
-If later you want to use your database in a Python project:
-
+Step 4 — Connect Python (optional, later)
+1. When you start mixing SQL with Python:
 import sqlite3
-
 conn = sqlite3.connect("mydatabase.db")
 cursor = conn.cursor()
-
-# Run a SQL file programmatically
-with open("create_students_table.sql") as f:
-    sql_script = f.read()
-
-cursor.executescript(sql_script)
+with open("sql/create_students_table.sql") as f:
+    cursor.executescript(f.read())
 conn.commit()
 conn.close()
 
+This lets you:
+- Set up the database automatically.
+- Populate it from Python scripts.
+- Test your app with consistent data.
 
-This allows you to automate applying SQL scripts for testing or deployment.
+Step 5 — Organize & iterate
+1. Whenever you modify or expand your database:
+Create a new SQL file for the change (don’t overwrite old ones).
+Add comments at the top:
 
-✅ Summary Workflow
+-- File: add_courses_table.sql
+-- Author: Zineb
+-- Date: 2025-11-10
+-- Purpose: Add new table for courses
 
-PyCharm: Write .sql files in the repo.
+Run in DBeaver → Commit → Push.
 
-DBeaver: Run the .sql files on your database and check data visually.
-
-GitHub: Commit .sql files for version control and collaboration.
-
-Optional Python: Use .sql scripts programmatically.
-
-
-
-
-
-
-
-
+- Over time, you’ll have a versioned history of your database evolution.
 
 
 
@@ -285,30 +97,3 @@ Optional Python: Use .sql scripts programmatically.
 
 
 
-
-
-
-
-
-
-
-
-
-
--- Example run
--- This script will create a users table, insert three rows of data, and then retrieve and display all the rows from the users table.
-
--- Create a test table
-CREATE TABLE IF NOT EXISTS users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
-    email VARCHAR(100)
-);
-
--- Insert some data
-INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');
-INSERT INTO users (name, email) VALUES ('Bob', 'bob@example.com');
-INSERT INTO users (name, email) VALUES ('Charlie', 'charlie@example.com');
-
--- Query the data
-SELECT * FROM users;
