@@ -1,0 +1,114 @@
+INTRODUCTION TO SQL (Structured Query Language)
+
+Because I’m working with both Python and SQL, I need to run this script as a SQL query rather than just writing it.
+I’m using PyCharm Community Edition, which doesn’t include built-in database tools — so when I write a .sql file, it’s simply a text file until it’s executed by a real database engine.
+To actually run the SQL, I use an external tool such as MySQL, DBeaver, or SQLite’s command-line interface.
+No matter which database system you use, remember that .sql files are just plain text scripts — they can be stored, shared, and version-controlled in GitHub like any other code file.
+
+DrawSQL works with MySQL, and it’s mainly for visual design and generating SQL scripts, not for running queries directly.
+MySQL Workbench is just a GUI tool. 
+so I´ll need the MySQL server/database engine installed to actually run queries.
+
+----------- When you start a work session: -----------
+
+Stage	        Tool	                Description
+Design schema	PyCharm	                Write .sql
+Execute schema	DBeaver + MySQL	        Run SQL
+Inspect results	DBeaver	                Verify
+Commit scripts	GitHub	                Version control
+Automate setup	Python + MySQL connector Optional
+
+--------> Optional: Setting up once for efficiency
+Create folders in PyCharm:
+- sql/ for scripts
+- python/ for integration scripts
+- Configure DBeaver to auto-connect on startup.
+- Use descriptive file names (e.g., v1_setup.sql, v2_alter_table.sql).
+- Keep your .db file in the same repo so Python and DBeaver point to the same path.
+
+----------- WORKFLOW OVERVIEW -----------
+
+(when working with databases in Pycharm + DBeaver + Mysql + GitHub)
+
+Step 0 — Prep: Open your tools
+1. Start MySQL server
+macOS/Linux: brew services start mysql     # or: sudo systemctl start mysql
+2. Open PyCharm → project folder
+3. Open DBeaver → ensure connection to MySQL:
+Host: localhost
+Database: school
+Port: 3306
+User: root
+4. (Optional) Open Terminal in PyCharm for Git commands.
+
+
+Step 1 — Create or edit your .sql file in PyCharm
+1. Write SQL in a file under /sql, e.g.:
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    age INT,
+    grade VARCHAR(5)
+);
+2. Save as sql
+
+
+Step 2 — Run SQL in DBeaver
+1. Confirm the MySQL connection is active (no red “X”).Right-click → Connect if needed.
+2. Right-click your database (school) → SQL Editor → New SQL Script.
+3. Open your file: File → Open File → select v1_create_students_table.sql.
+4. Click the green ▶️ Execute (Ctrl+Enter / Cmd+Enter).
+5. In the Database Navigator, check:
+school
+ └── Tables
+      └── students
+Right-click → View Data → All Rows to confirm table creation.
+
+
+Step 3 — Version control (GitHub)
+In PyCharm Terminal:
+git status
+git add sql/v1_create_students_table.sql
+git commit -m "Add students table schema"
+git push
+
+Tip: Only commit .sql files — not actual database data.
+
+
+Step 4 — Connect Python (optional, later)
+When you start scripting data interaction in Python:
+import mysql.connector
+
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="yourpassword",
+    database="school"
+)
+cursor = conn.cursor()
+
+with open("sql/v1_create_students_table.sql") as f:
+    cursor.execute(f.read(), multi=True)
+
+conn.commit()
+conn.close()
+
+This allows you to:
+Automatically set up the schema from Python.
+Run data seeding or migration scripts.
+Integrate MySQL with applications.
+
+
+Step 5 — Organize & iterate
+1. When updating the database:
+Create a new .sql file for each change (never overwrite old ones).
+2. Add a header comment at the top:
+-- File: v2_add_courses_table.sql
+-- Author: Zineb
+-- Date: 2025-11-11
+-- Purpose: Add new table for course management
+3. Run it in DBeaver → Verify → Commit → Push to GitHub.
+
+Over time, you’ll have a versioned history of your database evolution.
+
