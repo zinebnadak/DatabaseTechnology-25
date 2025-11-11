@@ -4,7 +4,7 @@ CREATE TABLE students (
     student_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
-    role VARCHAR(50), -- Role could be 'Man', 'Fru', etc. as seen in the INSERT statements
+    role VARCHAR(50), -- Role could be 'man', 'woman', etc. as seen in the INSERT statements
     age INT,
     nationality VARCHAR(100),
     registration_date DATE
@@ -15,8 +15,8 @@ CREATE TABLE students (
 Example:
 INSERT INTO students (first_name, last_name, role, age, nationality)
 VALUES
-('Zineb', 'Nadak', 'Fru', 20, 'Moroccan'),
-('Mariam', 'Nadak', 'Man', 22, 'Finnish');
+('Zineb', 'Nadak', 'woman', 20, 'Moroccan'),
+('Mariam', 'Nadak', 'woman', 22, 'Finnish');
 
 /* 2. Single-row insert */
 -- Insert one row at a time.
