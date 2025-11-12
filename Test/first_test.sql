@@ -1,6 +1,9 @@
 -- File: v1_create_students_table.sql
 -- Purpose: Create a students table and insert sample data
 
+-- Use the Högskolan database
+USE Högskolan;
+
 -- Create table
 CREATE TABLE IF NOT EXISTS students (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -16,3 +19,6 @@ INSERT INTO students (first_name, last_name, age, grade) VALUES
 ('Bob', 'Smith', 22, 'B'),
 ('Charlie', 'Lee', 19, 'A'),
 ('Diana', 'Garcia', 21, 'C');
+
+-- Show all students
+SELECT * FROM students;

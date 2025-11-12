@@ -79,3 +79,4 @@ ORDER BY [columns]
 5. HAVING -> filter groups created by GROUP BY.
 6. UPDATE -> modify existing rows in a table.
 */
+
