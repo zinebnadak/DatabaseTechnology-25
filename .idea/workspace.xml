@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="18ceec69-4320-49e7-9b9c-c27a2562feb3" name="Changes" comment="12.11" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;zinebnadak&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/zinebnadak/DatabaseTechnology-25.git&quot;,
+    &quot;accountId&quot;: &quot;a986e2c6-594c-4050-bcc1-94e9a1cdf32b&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="34JpEp8UdoShZ8mleFTefRK6wwz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.file.sql.executor&quot;: &quot;Run&quot;,
+    &quot;Python.first_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.lefttodo.txt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Test" />
+      <recent name="$PROJECT_DIR$/SQL" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="lefttodo.txt" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="DatabaseTechnology-25" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lefttodo.txt" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-348a24fa61fa-5312c7369657-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.23774.444" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18ceec69-4320-49e7-9b9c-c27a2562feb3" name="Changes" comment="" />
+      <created>1760941419608</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760941419608</updated>
+    </task>
+    <task id="LOCAL−00001" summary="20.10">
+      <option name="closed" value="true" />
+      <created>1760942406024</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1760942406024</updated>
+    </task>
+    <task id="LOCAL−00002" summary="4.11">
+      <option name="closed" value="true" />
+      <created>1762245053788</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1762245053788</updated>
+    </task>
+    <task id="LOCAL−00003" summary="4.11">
+      <option name="closed" value="true" />
+      <created>1762251913093</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1762251913093</updated>
+    </task>
+    <task id="LOCAL−00004" summary="4.11">
+      <option name="closed" value="true" />
+      <created>1762252643314</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1762252643314</updated>
+    </task>
+    <task id="LOCAL−00005" summary="4.11">
+      <option name="closed" value="true" />
+      <created>1762257595261</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1762257595261</updated>
+    </task>
+    <task id="LOCAL−00006" summary="5.11">
+      <option name="closed" value="true" />
+      <created>1762335859880</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1762335859880</updated>
+    </task>
+    <task id="LOCAL−00007" summary="5.11">
+      <option name="closed" value="true" />
+      <created>1762344906235</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1762344906235</updated>
+    </task>
+    <task id="LOCAL−00008" summary="10.11">
+      <option name="closed" value="true" />
+      <created>1762790258732</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1762790258732</updated>
+    </task>
+    <task id="LOCAL−00009" summary="11.11">
+      <option name="closed" value="true" />
+      <created>1762862005747</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1762862005747</updated>
+    </task>
+    <task id="LOCAL−00010" summary="11.11">
+      <option name="closed" value="true" />
+      <created>1762868864492</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1762868864492</updated>
+    </task>
+    <task id="LOCAL−00011" summary="12.11">
+      <option name="closed" value="true" />
+      <created>1762958357104</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1762958357104</updated>
+    </task>
+    <task id="LOCAL−00012" summary="12.11">
+      <option name="closed" value="true" />
+      <created>1762958534522</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1762958534522</updated>
+    </task>
+    <task id="LOCAL−00013" summary="12.11 16:43">
+      <option name="closed" value="true" />
+      <created>1762958638028</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1762958638028</updated>
+    </task>
+    <task id="LOCAL−00014" summary="12.11">
+      <option name="closed" value="true" />
+      <created>1762959407889</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1762959407889</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="20.10" />
+    <MESSAGE value="4.11" />
+    <MESSAGE value="5.11" />
+    <MESSAGE value="10.11" />
+    <MESSAGE value="11.11" />
+    <MESSAGE value="12.11 16:43" />
+    <MESSAGE value="12.11" />
+    <option name="LAST_COMMIT_MESSAGE" value="12.11" />
+  </component>
+</project>
