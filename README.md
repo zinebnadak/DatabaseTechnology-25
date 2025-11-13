@@ -30,20 +30,31 @@ Create folders in PyCharm:
 
 (when working with databases in Pycharm + DBeaver + Mysql + GitHub)
 
-Step 0 — Prep: Open your tools
-1. Start MySQL server
-macOS/Linux: brew services start mysql     # or: sudo systemctl start mysql
-2. Open PyCharm → project folder
-3. Open DBeaver → ensure connection to MySQL:
+------------------ WORKFLOW USING DBEAVER ONLY -----------------
+Step 0 — Prep
+
+Start MySQL server:
+brew services start mysql   # macOS
+sudo systemctl start mysql  # Linux
+Open PyCharm → your project folder.
+Open DBeaver:
+Connect to MySQL:
+
 Host: localhost
-Database: school
 Port: 3306
 User: root
-4. (Optional) Open Terminal in PyCharm for Git commands.
+Password: <your password>
 
+(Optional) Open PyCharm terminal for Git.
 
-Step 1 — Create or edit your .sql file in PyCharm
-1. Write SQL in a file under /sql, e.g.:
+Step 1 — Choose or create a database
+In DBeaver, check the Database Navigator panel.
+If your target database exists (e.g., school), click it.
+If not, right-click → Create New Database, give it a name.
+
+Step 2 — Create/Edit your SQL file
+In PyCharm, create .sql files in your /sql folder.
+Example v1_create_students_table.sql:
 CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50),
@@ -51,35 +62,26 @@ CREATE TABLE students (
     age INT,
     grade VARCHAR(5)
 );
-2. Save as sql
+Save the file.
 
+Step 3 — Run SQL in DBeaver
+In Database Navigator, right-click the database → SQL Editor → New SQL Script.
+Open your .sql file: File → Open File → select your file.
+Execute (▶️ or Ctrl+Enter / Cmd+Enter).
+Verify in Database Navigator:
+Expand database → Tables → students → Right-click → View Data → All Rows.
 
-Step 2 — Run SQL in DBeaver
-1. Confirm the MySQL connection is active (no red “X”).Right-click → Connect if needed.
-2. Right-click your database (school) → SQL Editor → New SQL Script.
-3. Open your file: File → Open File → select v1_create_students_table.sql.
-4. Click the green ▶️ Execute (Ctrl+Enter / Cmd+Enter).
-5. In the Database Navigator, check:
-school
- └── Tables
-      └── students
-Right-click → View Data → All Rows to confirm table creation.
-
-
-Step 3 — Version control (GitHub)
-In PyCharm Terminal:
+Step 4 — Version Control (GitHub)
+In PyCharm terminal:
 git status
 git add sql/v1_create_students_table.sql
 git commit -m "Add students table schema"
 git push
+Only commit .sql files (not database data).
 
-Tip: Only commit .sql files — not actual database data.
-
-
-Step 4 — Connect Python (optional, later)
-When you start scripting data interaction in Python:
+Step 5 — Optional Python Integration
+Later, you can automate running these SQL files in Python:
 import mysql.connector
-
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -87,28 +89,91 @@ conn = mysql.connector.connect(
     database="school"
 )
 cursor = conn.cursor()
-
 with open("sql/v1_create_students_table.sql") as f:
     cursor.execute(f.read(), multi=True)
-
 conn.commit()
 conn.close()
 
-This allows you to:
-Automatically set up the schema from Python.
-Run data seeding or migration scripts.
-Integrate MySQL with applications.
+Step 6 — Organize & iterate
+Always create new .sql files for updates.
+Add header comments with file name, author, date, and purpose.
+Run → Verify → Commit → Push.
 
 
-Step 5 — Organize & iterate
-1. When updating the database:
-Create a new .sql file for each change (never overwrite old ones).
-2. Add a header comment at the top:
+
+----------------- WORKFLOW USING MYSQL ONLY (PyCharm Terminal) -----------------
+Step 0 — Prep
+Start MySQL server:
+mysql.server start
+If permission errors appear, fix /usr/local/var/mysql ownership:
+sudo chown -R _mysql:_mysql /usr/local/var/mysql
+sudo chmod -R 755 /usr/local/var/mysql
+Open PyCharm terminal.
+
+Step 1 — Choose or create a database
+Log in to MySQL:
+mysql -u root -p
+Check existing databases:
+SHOW DATABASES;
+Create database if it doesn’t exist (use backticks for special characters):
+CREATE DATABASE `högskolan`;
+Exit MySQL:
+exit;
+
+Step 2 — Create/Edit your SQL file
+In PyCharm /sql folder, create .sql files (same as DBeaver workflow).
+Example v1_create_students_table.sql:
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    age INT,
+    grade VARCHAR(5)
+);
+
+Step 3 — Run SQL from terminal
+Navigate to the folder containing your SQL file:
+cd /path/to/project/sql
+Execute the file on your chosen database:
+mysql -u root -p "högskolan" < v1_create_students_table.sql
+Enter root password (DataBaser!25) when prompted.
+Use quotes for database names with special characters.
+
+Step 4 — Verify tables/data
+Log in:
+mysql -u root -p
+Switch to your database:
+USE `högskolan`;
+SHOW TABLES;
+SELECT * FROM students;
+
+Step 5 — Version Control (GitHub)
+Same as DBeaver workflow:
+git status
+git add sql/v1_create_students_table.sql
+git commit -m "Add students table schema"
+git push
+
+Step 6 — Optional Python Integration
+Run .sql files from Python:
+import mysql.connector
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="DataBaser!25",
+    database="högskolan"
+)
+cursor = conn.cursor()
+with open("sql/v1_create_students_table.sql") as f:
+    cursor.execute(f.read(), multi=True)
+conn.commit()
+conn.close()
+
+Step 7 — Organize & iterate
+Always create new .sql files for changes.
+Include header comments:
 -- File: v2_add_courses_table.sql
 -- Author: Zineb
--- Date: 2025-11-11
+-- Date: 2025-11-13
 -- Purpose: Add new table for course management
-3. Run it in DBeaver → Verify → Commit → Push to GitHub.
-
-Over time, you’ll have a versioned history of your database evolution.
-
+Run → Verify → Commit → Push.
