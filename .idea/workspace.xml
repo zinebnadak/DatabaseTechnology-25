@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18ceec69-4320-49e7-9b9c-c27a2562feb3" name="Changes" comment="12.11">
+    <list default="true" id="18ceec69-4320-49e7-9b9c-c27a2562feb3" name="Changes" comment="13.11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +199,21 @@
       <option name="presentableId" value="LOCAL−00015" />
       <updated>1762959459445</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL−00016" summary="12.11">
+      <option name="closed" value="true" />
+      <created>1763036677515</created>
+      <option name="number" value="LOCAL−00016" />
+      <option name="presentableId" value="LOCAL−00016" />
+      <updated>1763036677515</updated>
+    </task>
+    <task id="LOCAL−00017" summary="13.11">
+      <option name="closed" value="true" />
+      <created>1763036685279</created>
+      <option name="number" value="LOCAL−00017" />
+      <option name="presentableId" value="LOCAL−00017" />
+      <updated>1763036685279</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -211,6 +224,7 @@
     <MESSAGE value="11.11" />
     <MESSAGE value="12.11 16:43" />
     <MESSAGE value="12.11" />
-    <option name="LAST_COMMIT_MESSAGE" value="12.11" />
+    <MESSAGE value="13.11" />
+    <option name="LAST_COMMIT_MESSAGE" value="13.11" />
   </component>
 </project>
