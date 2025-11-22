@@ -1,0 +1,46 @@
+
+
+What the problem was
+1. Unknown root password – You didn’t remember the MySQL root password, so normal login (mysql -u root -p) failed.
+2. Attempts to run mysqld_safe as root – On macOS Homebrew MySQL 9.x, mysqld_safe refuses to run as root for security reasons. That caused errors and “suspended” processes.
+3. mysql_secure_installation failed – Because it tries to log in as root, but your password was unknown, it couldn’t proceed.
+The workaround we used:
+* Start MySQL in skip-grant-tables mode as your macOS user (not root), which bypasses passwords.
+* Login to MySQL and reset the root password.
+* Restart MySQL normally with Homebrew.
+Now your root login works, so future access is easy.
+
+
+
+
+
+Routine for the future
+To avoid this headache again, follow these steps whenever you start MySQL:
+1. Make sure MySQL is running (Homebrew version):
+brew services list
+brew services start mysql   # if it’s stopped
+
+2. Log in as root (once you’ve set a password):
+mysql -u root -p
+* Enter your root password.
+* If you forget it, use the skip-grant-tables method as your macOS user, not root, to reset it.
+
+3. Optional: create a user for daily work – safer than using root:
+CREATE USER 'zineb'@'localhost' IDENTIFIED BY 'YourPassword123';
+GRANT ALL PRIVILEGES ON *.* TO 'zineb'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+* Then you can just use:
+mysql -u zineb -p
+
+4. Stop and start MySQL safely:
+brew services stop mysql
+brew services start mysql
+* Don’t try to run mysqld manually as root unless you really need skip-grant-tables.
+
+5. Backup passwords somewhere safe — avoids the whole reset process.
+💡 Quick tip: For a beginner, the simplest routine is:
+* Start MySQL with brew services start mysql
+* Login with your user (mysql -u zineb -p)
+* Check databases and tables
+* Do your work
+No need to mess with mysqld_safe unless there’s a forgotten root password.
