@@ -1,8 +1,8 @@
 -- File: v1_create_students_table.sql
 -- Purpose: Create a students table and insert sample data
 
--- Use the Högskolan database
-USE Högskolan;
+-- Use the new_schema database
+USE new_schema;
 
 -- Create table
 CREATE TABLE IF NOT EXISTS students (

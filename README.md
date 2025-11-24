@@ -9,7 +9,126 @@ DrawSQL works with MySQL, and it’s mainly for visual design and generating SQL
 MySQL Workbench is just a GUI tool. 
 so I´ll need the MySQL server/database engine installed to actually run queries.
 
+-------------------- MySQL Setup & Workflow (Mac/Homebrew) --------------------
+
+
+Step 0 — Start MySQL server
+brew services start mysql
+- Check if it’s running
+mysql.server status
+ps aux | grep mysql
+
+  
+Step 1 — Create a MySQL user (only if you don’t have one yet)
+- Log in as root:
+mysql -u root -p
+
+- In MySQL prompt:
+CREATE USER 'zineb'@'localhost' IDENTIFIED BY 'skola';
+GRANT ALL PRIVILEGES ON . TO 'zineb'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
+
+  
+Step 2 — Connect to MySQL using your user
+mysql -u zineb -p
+- Enter password: skola
+Check databases:
+SHOW DATABASES;
+
+  
+Step 3 — Import a .sql file (from Terminal, outside MySQL prompt)
+mysql -u zineb -p < ~/Desktop/world\ 
+1
+1.sql
+mysql -u zineb -p < ~/Desktop/dreamhome.sql
+
+
+Step 4 — Open MySQL Workbench
+- Open Workbench
+- Create a new connection:
+Connection Name: zineb_local
+Hostname: localhost
+Port: 3306
+Username: zineb
+Password: skola
+- Click Test Connection → should succeed
+
+
+Step 5 — Refresh schemas in Workbench
+- Right-click SCHEMAS panel → Refresh All
+- You should see your imported databases: world, dreamhome
+
+
+Step 6 — Explore tables in Workbench
+USE world;
+SHOW TABLES;
+
+USE dreamhome;
+SHOW TABLES;
+
+
+Step 7 — Optional: Connect from Python (PyCharm)
+import mysql.connector
+
+conn = mysql.connector.connect(
+host="localhost",
+user="zineb",
+password="skola",
+database="world"
+)
+cursor = conn.cursor()
+with open("sql/first_test.sql") as f:
+cursor.execute(f.read(), multi=True)
+
+conn.commit()
+conn.close()
+
+
+TO STOP ANYTHING RUNNING:
+1 — Stop MySQL Homebrew service
+brew services stop mysql
+This stops the Homebrew-managed MySQL server if it’s running.
+
+2 — Kill any leftover MySQL processes
+sudo pkill mysqld
+sudo pkill mysqld_safe
+This force-stops any MySQL processes that are still alive.
+
+3 — Verify that no MySQL server is running
+ps aux | grep mysql
+If only the grep mysql line appears, there are no running MySQL processes.
+
+4 — Remove leftover socket/pid files (optional)
+sudo rm -f /tmp/mysql.sock
+sudo rm -f /usr/local/var/mysql/*.pid
+This clears leftover files that sometimes prevent MySQL from starting.
+
+
+
+IF YOU SEE THIS IN TERMINAL TO VERIFY IF SOMETHING IS RUNNING: "zineb            31756   0.0  0.0 34121296    652 s000  S+    2:42PM   0:00.01 grep mysql
+zineb@ZMAC ~ % " means: 
+
+- zineb → the macOS user running the command.
+- 31756 → the process ID (PID) of this process.
+- 0.0 0.0 → CPU and memory usage of the process.
+- 34121296 652 → virtual memory size and resident memory.
+- s000 → terminal (tty) the process is attached to.
+- S+ → process state (S = sleeping, + = in foreground).
+- 2:42PM → start time of the process.
+- 0:00.01 → CPU time used.
+- grep mysql → the command itself (the grep mysql you ran).
+✅ Important: This line is just the grep mysql command you ran, not a MySQL server.
+
+So if you see only this line after ps aux | grep mysql, it means no MySQL server is currently running.
+
+
+------------------------------------------------------
+------------------------------------------------------
 ----------- When you start a work session: -----------
+------------------------------------------------------
+------------------------------------------------------
+
 
 Stage	        Tool	                Description
 Design schema	PyCharm	                Write .sql
