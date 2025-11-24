@@ -13,7 +13,7 @@ Now your root login works, so future access is easy.
 
 
 
-
+.
 Routine for the future
 To avoid this headache again, follow these steps whenever you start MySQL:
 1. Make sure MySQL is running (Homebrew version):
