@@ -9,7 +9,7 @@ DrawSQL works with MySQL, and it’s mainly for visual design and generating SQL
 MySQL Workbench is just a GUI tool. 
 so I´ll need the MySQL server/database engine installed to actually run queries.
 
--------------------- MySQL Setup & Workflow (Mac/Homebrew) --------------------
+-------------------- MySQL Setup & Workflow (Mac/ with Homebrew) --------------------
 
 
 Step 0 — Start MySQL server
