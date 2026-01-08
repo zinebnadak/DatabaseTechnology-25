@@ -34,7 +34,7 @@ cursor = conn.cursor()
 # 2. Open and read SQL file
 # -----------------------------
 # Replace path with the actual path to your SQL file on Desktop
-sql_file_path = "/Users/zineb/Pycharm/September/DatabaseTechnology-25/Test/first_test.sql"
+sql_file_path = "/Archive /Test/first_test.sql"
 
 with open(sql_file_path, "r") as file:
     sql_script = file.read()
