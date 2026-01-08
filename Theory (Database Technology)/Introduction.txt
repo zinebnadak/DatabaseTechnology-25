@@ -1,0 +1,42 @@
+--- COURSE CONTENTS ---
+
+- Basic concepts in database technology, different types of databases, database architectures
+
+The relational model:
+
+- A relational database: MySQL
+- SQL: Structured Query Language
+
+- A document database: MongoDB
+- MQL: MongoDB Query Language
+
+Course literature: Connolly & Begg: Database Systems
+
+---------------
+
+File-based systems:
+File-based systems are the pre-database way of storing and managing data.
+They rely on plain files (text, CSV, binary, spreadsheets) stored on disk
+, with each application managing its own data logic
+
+Data entry and reports --> (Application programs((File handling routines)(File definition))) --> File/s
+
+Database Management System (DBMS):
+The software that creates, stores, protects, and allows you to work with data.
+DBMS software – MySQL, PostgreSQL, MongoDB
+
+Database system - ((Data entry and reports)(DBMS)) --> Database
+
+Server
+the machine (physical or virtual) that runs the database management system (DBMS) and provides data services to clients over a network.
+ex. Discord login server
+
+A database server consists of:
+Hardware / OS – CPU, RAM, disk, network
+DBMS software – MySQL, PostgreSQL, MongoDB, etc.
+Stored data – the actual databases
+Network interface – listens for client requests
+
+Client
+someone who uses the servers
+Clients don’t touch files. They talk to the DBMS.
