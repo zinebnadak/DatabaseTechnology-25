@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18ceec69-4320-49e7-9b9c-c27a2562feb3" name="Changes" comment="3.12">
-      <change afterPath="$PROJECT_DIR$/Theory (Database Technology)/Introduction.txt" afterDir="false" />
+    <list default="true" id="18ceec69-4320-49e7-9b9c-c27a2562feb3" name="Changes" comment="8.1">
+      <change afterPath="$PROJECT_DIR$/Theory (Database Technology)/Database architectures.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Theory (Database Technology)/The relational model.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL_routine.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Archive /MySQL_routine.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/first_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Archive /Test/first_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/first_test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Archive /Test/first_test.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lefttodo.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +53,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Theory (Database Technology)" />
       <recent name="$PROJECT_DIR$/Archive " />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Test" />
@@ -255,7 +253,14 @@
       <option name="presentableId" value="LOCAL−00022" />
       <updated>1764774197961</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL−00023" summary="8.1">
+      <option name="closed" value="true" />
+      <created>1767885488306</created>
+      <option name="number" value="LOCAL−00023" />
+      <option name="presentableId" value="LOCAL−00023" />
+      <updated>1767885488306</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -270,6 +275,7 @@
     <MESSAGE value="22.11" />
     <MESSAGE value="24.11" />
     <MESSAGE value="3.12" />
-    <option name="LAST_COMMIT_MESSAGE" value="3.12" />
+    <MESSAGE value="8.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="8.1" />
   </component>
 </project>
