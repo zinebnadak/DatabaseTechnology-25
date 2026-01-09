@@ -1,0 +1,16 @@
+Quick notes/review
+- server
+- both MySQL and Mongo db will come but more MySQL
+- goal in this cousre is to WORK WITH a already availiable database - then next in another course design from the absolute beginning
+
+Database Approach:
+- Shared collection of logically related data, designed to meet the info needs of an organization.
+- System catalog: provides an description of the data to enable program-data independance. Example data dictionary, metadata
+- Logically related data comprises entities, attributes, and relationships  of an orgaization´s information
+- The structure of the database is called the schema
+
+
+4:32
+
+https://drive.google.com/drive/u/1/folders/1TbSK0qzyUr-dSq9EHXh0muZoHW7YXZM7
+https://docs.google.com/presentation/d/184xnMFuzA9zZM2iV7BeArd27AYF_kB5tAw0cAp4IE68/edit?slide=id.g10ea965a3b9_0_169#slide=id.g10ea965a3b9_0_169
