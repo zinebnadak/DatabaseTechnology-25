@@ -25,4 +25,4 @@ Instances of Branch and staff relations = the actual rows in their tables, each 
 Properties of relations
 - the relation name is distinct from all other
 
-27.43
+27.43.
