@@ -1,0 +1,28 @@
+Relational model terminology
+
+- A relation = table with columns and rows
+- An attribute = named column of a relation
+- A domain (definition) = set of allowable values for one or more attributes
+
+Example: branchNo (attribute), BranchNumbers (Domain Name), charachter: size 4, range B001-B999 (domain definition)
+
+Mathematical definition of a set (sv. mängd)
+- collection of objects or values
+- objects have no ordering
+- duplicates are not allowed
+- use "{}" to show the contents of a set ex a set of teachers: {kim, stefan, joakim}
+- A subset (delmängd) is a part of a set, for example {Jonas, Therese}
+
+Mathematical definition of a relation
+- ex. BranchNumbers = {B001, B002, B003}
+- CityNames = {London, Glasgow}
+
+Cartesian product = The Caresin product is the set of all possible pairs where the first element comes from BranchNumbers and the second from CityNames—essentially a Cartesian product.
+ex. Consider three sets BranchNumbers, CityNames, PostCodes. Then the Cartesian product Branchnumbers X CityNames X PostCodes is the set of all tuples.
+
+Instances of Branch and staff relations = the actual rows in their tables, each representing a specific branch or staff member with all attribute values filled.
+
+Properties of relations
+- the relation name is distinct from all other
+
+27.43
