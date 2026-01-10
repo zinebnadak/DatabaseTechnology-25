@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18ceec69-4320-49e7-9b9c-c27a2562feb3" name="Changes" comment="9.1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Theory (Database Technology)/The relational model.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Theory (Database Technology)/The relational model.txt" afterDir="false" />
-    </list>
+    <list default="true" id="18ceec69-4320-49e7-9b9c-c27a2562feb3" name="Changes" comment="10.1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -273,7 +270,14 @@
       <option name="presentableId" value="LOCAL−00025" />
       <updated>1768038447376</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL−00026" summary="10.1">
+      <option name="closed" value="true" />
+      <created>1768077244650</created>
+      <option name="number" value="LOCAL−00026" />
+      <option name="presentableId" value="LOCAL−00026" />
+      <updated>1768077244651</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -290,6 +294,7 @@
     <MESSAGE value="3.12" />
     <MESSAGE value="8.1" />
     <MESSAGE value="9.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="9.1" />
+    <MESSAGE value="10.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="10.1" />
   </component>
 </project>
