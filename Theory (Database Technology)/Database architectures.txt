@@ -2,15 +2,65 @@ Quick notes/review
 - server
 - both MySQL and Mongo db will come but more MySQL
 - goal in this cousre is to WORK WITH a already availiable database - then next in another course design from the absolute beginning
+- Mongo db is a document database
+- MySQL is a relational dtabase
+- In this couse we will mostly work in Conceptual level
 
 Database Approach:
+- A database is a structured system for storing, organizing, and retrieving data efficiently.
+
 - Shared collection of logically related data, designed to meet the info needs of an organization.
 - System catalog: provides an description of the data to enable program-data independance. Example data dictionary, metadata
 - Logically related data comprises entities, attributes, and relationships  of an orgaization´s information
-- The structure of the database is called the schema
+- The structure of the database is called the schema (basically the database you´ll work with)
 
 
-4:32
+Evolution of Databases
+- Flat Files -> Hierarchical -> Relational -> Network -> NoSQL -> Cloud & AI
 
-https://drive.google.com/drive/u/1/folders/1TbSK0qzyUr-dSq9EHXh0muZoHW7YXZM7
-https://docs.google.com/presentation/d/184xnMFuzA9zZM2iV7BeArd27AYF_kB5tAw0cAp4IE68/edit?slide=id.g10ea965a3b9_0_169#slide=id.g10ea965a3b9_0_169
+NoSQL
+- NoSQL (“Not Only SQL”) uses flexible, schema-less models like documents (often JSON), key-value pairs, and graphs, while MySQL uses fixed tables with strict relational schemas.
+
+Advantages of DBMSs
+- Better control of dat redundancy and consistency
+- More info from the same amount of data (derivation of new knowledge, easier sharing of data)
+
+- Cumtom views of the data
+- Data integrety though constraints
+- Built in support of current transactions
+
+- Built-in support for backup and recovery services
+
+Dis - Advantages of DBMSs
+- complexity
+- * maybe costs of data conversion (transforming data from one format, structure, or type into another so it can be used by a different system or application)
+
+Objectives of database architectures
+- all users should be able to access same data
+- A users view is immune to changes made in other views
+- should be able to change database storage structures without affecting the users views
+- should be able to change conceptual structure of database wo affecting all users
+
+Three- level database architecture
+1 physical data organisation (database)
+2 Internal level (Internal Schema)
+3 Conceptual level (Conceptual schema)     <-----  WE WILL WORK MOSTLY HERE
+4. External level (user 1 - view 1/ user 2 - view 2/ ...)
+
+*se picture
+
+Database Languages
+- MySQl consists of two parts DDL and DML.
+
+- Data Definition Lanuguage (DDL):
+* Used to define a schema or modify an existing one
+* Allows us to describe and name entities (i.e tables in a relational database), attributes and relationships required for the application
+* plus any associated integrity and security constraints
+* All specifications are stored in the system catalog of the database
+
+- Data Manipulation Lanuguage (DML):
+* General enquiry facility (query language) of the data
+* provides basic data manipulation operations on the data held in the database
+* a non-procedural, declarative DML allows user to state WHAT DATA is needed rather than how it is to be retreived
+
+E-R diagrams = a visual model that shows database entities, their attributes, and the relationships between them.
