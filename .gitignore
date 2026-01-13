@@ -1,5 +1,10 @@
-../.idea/
+# Ignore IDE config
+.idea/
+
+# macOS folder metadata file
 .DS_Store
+
+
 
 # I cleaned up my GitHub repo by removing the .idea folder from tracking and adding it to .gitignore so that my IDE files won’t be pushed anymore
 # , and I finally fixed my GitHub authentication by generating a Personal Access Token so I could push my commits safely.
