@@ -13,22 +13,47 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/zinebnadak/DatabaseTechnology-25.git",
-    "accountId": "a986e2c6-594c-4050-bcc1-94e9a1cdf32b"
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "zinebnadak"
   }
 }]]></component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/zinebnadak/DatabaseTechnology-25.git&quot;,
+    &quot;accountId&quot;: &quot;a986e2c6-594c-4050-bcc1-94e9a1cdf32b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="38CIQJWr9GBWaDG9MkjNoxZTqza" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/GitIgnore" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-348a24fa61fa-5312c7369657-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.23774.444" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task id="LOCAL−00001" summary="13.1">
@@ -59,7 +84,49 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1768297053942</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="886274f9-fab4-4c03-9641-920a0272cc08" name="Changes" comment="13.1" />
+      <created>1768297108829</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768297108829</updated>
+    </task>
+    <task id="LOCAL−00005" summary="13.1">
+      <option name="closed" value="true" />
+      <created>1768297159555</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1768297159555</updated>
+    </task>
+    <task id="LOCAL−00006" summary="13.1">
+      <option name="closed" value="true" />
+      <created>1768297168417</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1768297168417</updated>
+    </task>
+    <task id="LOCAL−00007" summary="13.1">
+      <option name="closed" value="true" />
+      <created>1768297262863</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1768297262863</updated>
+    </task>
+    <task id="LOCAL−00008" summary="13.1">
+      <option name="closed" value="true" />
+      <created>1768297331178</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1768297331178</updated>
+    </task>
+    <task id="LOCAL−00009" summary="13.1">
+      <option name="closed" value="true" />
+      <created>1768297385851</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1768297385851</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
