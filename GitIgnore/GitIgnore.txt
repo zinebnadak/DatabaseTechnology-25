@@ -8,6 +8,4 @@ I realized that once I properly set up my .gitignore to stop tracking junk files
 , I shouldn’t have to clean up my repo again for this project, and I also understood that my GitHub authentication via Personal Access Token will only need updating when it expires
 , so if I do this correctly at the start of future projects, I can avoid repeating this process.
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
 GitHub automatically blocks any commit containing secrets to prevent accidental leaks
