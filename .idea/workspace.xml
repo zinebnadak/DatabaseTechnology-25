@@ -10,8 +10,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/zinebnadak/DatabaseTechnology-25.git",
+    "accountId": "a986e2c6-594c-4050-bcc1-94e9a1cdf32b"
+  }
+}]]></component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "git-widget-placeholder": "main",
     "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
@@ -21,6 +31,25 @@
     </key>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL−00001" summary="13.1">
+      <option name="closed" value="true" />
+      <created>1768296724307</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1768296724307</updated>
+    </task>
+    <task id="LOCAL−00002" summary="13.1">
+      <option name="closed" value="true" />
+      <created>1768296770761</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1768296770761</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="13.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="13.1" />
   </component>
 </project>
