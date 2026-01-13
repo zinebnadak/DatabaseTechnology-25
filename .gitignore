@@ -1,0 +1,9 @@
+../.idea/
+.DS_Store
+
+# I cleaned up my GitHub repo by removing the .idea folder from tracking and adding it to .gitignore so that my IDE files won’t be pushed anymore
+# , and I finally fixed my GitHub authentication by generating a Personal Access Token so I could push my commits safely.
+# AND I realized that once I properly set up my .gitignore to stop tracking junk files like .idea and .DS_Store
+# , I shouldn’t have to clean up my repo again for this project, and I also understood that my GitHub authentication via Personal Access Token will only need updating when it expires
+# , so if I do this correctly at the start of future projects, I can avoid repeating this process.
+# GitHub automatically blocks any commit containing secrets to prevent accidental leaks
