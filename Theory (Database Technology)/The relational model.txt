@@ -23,8 +23,52 @@ ex. Consider three sets BranchNumbers, CityNames, PostCodes. Then the Cartesian 
 Instances of Branch and staff relations = the actual rows in their tables, each representing a specific branch or staff member with all attribute values filled.
 
 Properties of relations
-- the relation name is distinct from all other
+- The relation name is distinct from all other relation names in the schema
+- Each cell of the relation contains exactly one (single) value
+- Each attribute has a distinct name
+- Values of an attribute are all from the same domain
+- Each tuple is distinct; there are NO DUPLICATE TUPLES
+- Order of attributes OR tuples has no significance
 
-27.43.
+Relational keys:
 
-..
+- Primary key
+ONE unique identifier (across time)
+is the candidate key that is actually chosen to uniquely identify rows in a table.
+Least likely to change SO when selecting one think in the future, bcs the data will change and you need something that is least likely to be duplicated
+How to set one: ALTER TABLE ... ADD PRIMARY KEY (*the attribute/row you want to set as superkey)
+
+- Candidate key (they candidate to be prime key basically)
+is a minimal set of columns that uniquely identifies each row in a table
+when tying to choose primary key we have the/some candidate keys to choose from
+
+- superkey
+consists of candidate keys attributes + potentially some extra attributes
+(is one or multiple attributes together forms a key with a unique identity. There is ALWAYS an superkey in a schema bcs there are no duplicates)
+
+- Alternate Keys
+the candidate keys that were not chosen as the primary key but could still uniquely identify rows.
+
+- Foreign Key
+is a column (or set of columns) in one table that refers to the primary key in another table, creating a link between the two tables.
+can also possibly be the same relation (a table can reference its own primary key, like in a self-referencing relationship)
+example order 21 is bought by user 51 in online shop
+
+Relational integrity:
+- NULL values
+A NULL value represents missing, unknown, or inapplicable data in a table. It’s not the same as 0 or an empty string it literally means the value is undefined.
+
+- Entity Integrity
+No part of a candidate key can be empty (NULL). Every row must be uniquely identifiable.
+
+- Referential Integrity
+A foreign key must either match an existing candidate key in another (or the same) table, or be completely empty.
+
+- Enterprise Constraints
+Extra rules set by users or admins to control the data.
+
+ACID:
+Atomicity: Each transaction happens completely or not at all.
+Consistency: Transactions always leave the database in a valid state.
+Isolation: Transactions don’t interfere with each other.
+Durability: Once a transaction is done, its changes are permanent, even if the system crashes.
