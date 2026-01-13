@@ -64,3 +64,5 @@ Database Languages
 * a non-procedural, declarative DML allows user to state WHAT DATA is needed rather than how it is to be retreived
 
 E-R diagrams = a visual model that shows database entities, their attributes, and the relationships between them.
+
+.
