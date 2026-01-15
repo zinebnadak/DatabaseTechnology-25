@@ -1,4 +1,55 @@
-17.30 min lektion 2 webcm
+SQL (Structured English Query Language)
 
-https://drive.google.com/drive/u/1/folders/1Tyf158YKmtJDhYxqSAseya16Ih
-https://docs.google.com/presentation/d/1FOmeJEykb4teEAZFV_lhbq4I32EFhqJXf9ETZ7b2Zyc/edit?slide=id.g10ea965a3b9_0_201#slide=id.g10ea965a3b9_0_201
+Query = request for information from a database
+
+SQL is a declarative programming language - unlike imperative languages (Python, C, Java), SQL isn’t about writing step-by-step instructions for the computer to follow.
+Instead, you express the logic of the computation without specifying control flow.
+In other words, SQL lets you declare your goals, and the database figures out how to achieve them.
+
+Used to create, delete, retrieve and update data
+we use ";" after every instruction
+
+SQL has Two major components:
+DDL (Data Definition Language) = defining database structure
+DML (Data Manipulation Language) = retrieving and updating data
+
+BNF (Backus–Naur Form)
+= SQL syntax is a formal way of describing the rules and structure of SQL statements.
+It doesn’t execute anything—it just defines what is syntactically valid SQL.
+
+-------------- SQL COMMANDS (obligatory order) --------------
+
+The SELECT statement
+
+structure example:
+SELECT [DISTICT | ALL]
+{ * | [columnExpression [AS newName]] [,...]}
+FROM TableName [alias] [,...]
+[WHERE condition]
+[GROUP BY columnList] [HAVING condition]
+[ORDER BY columnList]
+
+* = all
+DISTINCT = remove dublettes / show the recurring value only once
+SELECT	 = Specifies which columns are to appear in output
+FROM     = Specifies table(s) to be used
+WHERE	 = Filters rows
+GROUP BY   = Forms groups of rows with same column value
+HAVING	   = Filters groups subject to some condition
+ORDER BY   = Specifies the order of the output
+
+Calculated and renamed columns
+- example:
+SELECT salary * 12 AS annualSalary
+FROM Staff;
+
+- salary * 12 is a calculated expression that multiplies each row’s salary by 12.
+- AS annualSalary assigns an alias (temporary column name) to the result of that expression in the query output.
+- The underlying column, table, and data type remain unchanged.
+
+
+FOR PRACTICAL VIDEO SEE Lektion 2 (24-10), 28:50-40:35
+- change to "don´t limit" to get all results
+- click on apply
+
+Next: Relational algebra and calculus. Basic SQL and SELECT. Aggregations and subqueries.
