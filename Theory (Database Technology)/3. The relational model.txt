@@ -1,4 +1,4 @@
-Relational model terminology
+---------- Relational model terminology ----------
 
 - A relation = table with columns and rows
 - An attribute = named column of a relation
@@ -41,6 +41,7 @@ How to set one: ALTER TABLE ... ADD PRIMARY KEY (*the attribute/row you want to 
 - Candidate key (they candidate to be prime key basically)
 is a minimal set of columns that uniquely identifies each row in a table
 when tying to choose primary key we have the/some candidate keys to choose from
+Can be just one which will be chosen as primary key
 
 - superkey
 consists of candidate keys attributes + potentially some extra attributes
@@ -72,3 +73,17 @@ Atomicity: Each transaction happens completely or not at all.
 Consistency: Transactions always leave the database in a valid state.
 Isolation: Transactions don’t interfere with each other.
 Durability: Once a transaction is done, its changes are permanent, even if the system crashes.
+
+⬇
+⬇
+⬇
+⬇
+⬇
+⬇
+⬇
+⬇
+⬇
+⬇
+
+
+---------- Define column restrictions and attribute domains in SQL ----------

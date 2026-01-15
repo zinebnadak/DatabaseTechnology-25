@@ -1,0 +1,38 @@
+
+------------ Relational Algebra and Relational Calculus (theoretical understanding) ------------
+
+Relational Algebra Fundamentally:
+
+Operations: select (filter rows), project (choose columns), join (combine tables), union/intersect/difference (set operations).
+Purpose: it tells you exactly how queries work behind the scenes and what’s possible with your data.
+It’s the foundation for query optimization and database design reasoning
+
+Relational Calculus Fundamentally TWO flavors:
+
+Tuple relational calculus (TRC): You describe properties of rows you want. E.g., “Give me all patients whose age > 60.”
+Domain relational calculus (DRC): You describe properties of individual values (columns) you want.
+Purpose: It’s the theoretical foundation behind SQL’s declarative style. SQL is closer to relational calculus than algebra, because you say what you want, not how to get it.
+
+
+
+
+
+
+
+
+Two most basic operations in RELATIONAL ALGEBRA:
+
+1. Selection (σ) - (lowercase sigma)
+What: Pick ROWS that match a condition.
+Example: σ_{Age>60}(Patient) → all patients older than 60.
+Think: “Filter rows.”
+
+2. Projection (π) - (pi)
+What: Pick COLUMNS you need.
+Example: π_{Name, Address}(Patient) → only names and addresses.
+Think: “Choose columns.”
+Selection (Rows): Choosed by definining "σ" (lowercase sigma)
+Projection (columns): Choosed by definining and using "π" (pi)
+
+Combo example:
+π_{Name, Address}(σ_{Age>60}(Patient)) → names and addresses of patients over 60.
