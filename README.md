@@ -1,4 +1,4 @@
-INTRODUCTION TO SQL (Structured Query Language)
+INTRODUCTION TO SQL (Structured Query Language) and MQL (MongoDB Query Language)
 
 Because I’m working with both Python and SQL, I need to run this script as a SQL query rather than just writing it.
 I’m using PyCharm Community Edition, which doesn’t include built-in database tools — so when I write a .sql file, it’s simply a text file until it’s executed by a real database engine.
