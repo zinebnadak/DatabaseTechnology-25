@@ -1,0 +1,66 @@
+SQL Subqueries – Quick Notes
+
+1. Subquery Basics
+A subquery is a SELECT nested inside another SELECT.
+Can appear in SELECT, FROM, WHERE, HAVING clauses of an outer query.
+
+Common uses:
+Combine data from multiple tables using foreign keys
+Use aggregate functions in conditions
+
+2. Subquery in WHERE
+Returns a value (or set of values) to compare with outer query.
+
+-- List staff who work in the branch at '163 Main St'
+SELECT staffNo, fName, lName, position
+FROM Staff
+WHERE branchNo =
+    (SELECT branchNo
+     FROM Branch
+     WHERE street = '163 Main St');
+
+3. Subquery in SELECT
+Can calculate values dynamically per row.
+
+-- Staff whose salary is greater than average, and difference
+SELECT staffNo, fName, lName, position,
+       salary - (SELECT AVG(salary) FROM Staff) AS salaryDiff
+FROM Staff
+WHERE salary > (SELECT AVG(salary) FROM Staff);
+
+4. Nested / Doubly Nested Subqueries
+Start from the innermost query when evaluating.
+If subquery returns multiple rows, use IN.
+
+-- Properties handled by staff at '163 Main St'
+SELECT propertyNo, street, city, postcode, type, rooms, rent
+FROM PropertyForRent
+WHERE staffNo IN
+    (SELECT staffNo
+     FROM Staff
+     WHERE branchNo =
+         (SELECT branchNo
+          FROM Branch
+          WHERE street = '163 Main St'));
+
+5. Subquery in FROM (Derived Tables)
+Creates a temporary table for the outer SELECT.
+Must assign an alias to the derived table.
+
+-- Average total salary cost per branch
+SELECT AVG(sumColumn) AS avgSalaryCost
+FROM (SELECT SUM(salary) AS sumColumn
+      FROM Staff
+      GROUP BY branchNo) AS sumTable;
+
+
+Cannot write AVG(SUM(salary)) directly
+Inner query alias is required (sumColumn)
+Derived table alias is required (sumTable)
+
+6. Key Takeaways
+- Subqueries allow dynamic and flexible queries without hardcoding values
+- IN for multiple-row results; = for single-row results
+- Nested subqueries can be multiple levels deep
+- Always alias derived tables in FROM
+- Use subqueries with aggregates to filter or calculate derived values

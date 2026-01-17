@@ -1,0 +1,43 @@
+------------- Updating Tables (Data Manipulation in SQL) -------------
+This part covers how to add, modify, and remove data in SQL. This is the Data Manipulation section of the exam.
+
+1. INSERT: Adding Data
+Purpose: Add new rows to a table
+
+Two Formats:
+Direct Entry: Specify the table name and a list of values for each column in the correct order
+INSERT with Subquery: Use a SELECT statement to copy data from one table into another
+
+Rule: If no column list is provided, values must be in the exact order of the table schema
+
+2. UPDATE: Modifying Data
+Purpose: Change existing data in a table
+Syntax: Uses SET to define new values and WHERE to target specific rows
+Critical Rule: If you omit WHERE, all rows in the table will be updated
+Example: Increase staff salaries by 3%
+UPDATE Staff
+SET salary = salary * 1.03;
+
+
+3. DELETE: Removing Data
+Purpose: Remove rows from a table
+Syntax:
+
+DELETE FROM TableName
+WHERE [condition];
+
+Critical Rule: If you omit WHERE, all rows will be deleted, leaving an empty table
+Note: DELETE removes rows, not the table structure
+
+4. Integrity Constraints
+When updating data, the database automatically enforces rules to keep data valid:
+Referential Integrity: You cannot delete a record that is referenced by another table
+Entity Integrity: Primary Key values cannot be NULL
+Domain Constraints: Data must match the allowed data type
+
+Key TakeAways:
+
+Command	    Primary             Action	    Key Clause	    Risk
+INSERT	    Add new             rows	    VALUES	        Wrong column order
+UPDATE	    Change existing     rows	    SET	            Forgetting WHERE (updates all rows)
+DELETE	    Remove existing     rows	    WHERE	        Forgetting WHERE (deletes all rows)

@@ -1,0 +1,41 @@
+SQL Grouping – Quick Notes
+
+1. GROUP BY Basics
+Use GROUP BY to create summary rows (subtotals) by one or more columns.
+Each unique value (or combination) forms a group.
+If WHERE is used, filter happens first, then grouping.
+
+-- Number of staff and total salaries per branch
+SELECT branchNo, COUNT(staffNo) AS count, SUM(salary) AS sum
+FROM Staff
+GROUP BY branchNo
+ORDER BY branchNo;
+
+2. Subtotals with WITH ROLLUP (MySQL-specific)
+Adds extra summary rows (“sum of sums”) after groups.
+
+SELECT branchNo,
+       COUNT(staffNo) AS count,
+       SUM(salary) AS sum
+FROM Staff
+GROUP BY branchNo
+WITH ROLLUP;
+
+3. HAVING Clause
+Filters groups, not individual rows (like WHERE).
+Column names in HAVING must appear in GROUP BY or be inside an aggregate.
+
+-- Only branches with more than 1 staff member
+SELECT branchNo,
+       COUNT(staffNo) AS count,
+       SUM(salary) AS sum
+FROM Staff
+GROUP BY branchNo
+HAVING COUNT(staffNo) > 1
+ORDER BY branchNo;
+
+4. Key Takeaways
+- WHERE filters rows before grouping
+- HAVING filters groups after grouping
+- Can combine GROUP BY + HAVING + aggregates (COUNT, SUM, AVG, MIN, MAX)
+- WITH ROLLUP can give overall totals or subtotals for all groups

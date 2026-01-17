@@ -1,0 +1,44 @@
+1. The EXISTS Operator
+Purpose: Used to test for the existence of any record in a subquery
+True / False: EXISTS returns TRUE if the subquery returns at least one row; otherwise FALSE
+Efficiency: Stops searching as soon as a single match is found
+Result Columns: The subquery usually uses SELECT * because column values are irrelevant; only existence matters
+
+2. Correlated Subqueries
+Definition: A subquery that refers to a column in the outer query
+Execution: Evaluated once for each row in the outer query
+Example: Find all staff who work in a London branch
+
+SELECT ...
+FROM Staff s
+WHERE EXISTS (
+  SELECT *
+  FROM Branch b
+  WHERE s.branchNo = b.branchNo
+    AND city = 'London'
+);
+
+
+3. The NOT EXISTS Operator
+Purpose: Returns TRUE only if the subquery returns zero rows
+Use Case: Finding "missing" relationships (entities without related records)
+Example: List all clients who have not viewed a property
+
+SELECT clientNo, fName, lName
+FROM Client c
+WHERE NOT EXISTS (
+  SELECT *
+  FROM Viewing v
+  WHERE c.clientNo = v.clientNo
+);
+
+
+4. EXISTS vs. JOIN
+JOIN: Use when you need to display columns from both tables in the final output
+EXISTS: Use when you only need to filter rows in the first table based on whether related rows exist in the second table
+
+
+Take Aways:
+Operator	    Logic	                When to Use
+EXISTS	        Subquery row count > 0	Finding records with a relationship
+NOT EXISTS	    Subquery row count = 0	Finding records without a relationship

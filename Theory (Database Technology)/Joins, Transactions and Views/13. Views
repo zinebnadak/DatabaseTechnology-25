@@ -1,0 +1,32 @@
+1. What is a View?
+Definition: A virtual relation, or the dynamic result of one or more relational operations on base tables
+Virtual Nature: A view does not physically exist as a stored table; it is generated at query time
+
+Purpose:
+Security: Hides parts of the database from specific users
+Simplicity: Makes complex multi-table operations appear as a single table
+Customization: Allows different users to see the same data in different ways
+
+2. Defining and Using Views
+Syntax:
+CREATE VIEW ViewName [(newColumnNames)] AS subselect
+[WITH CHECK OPTION];
+View Resolution: Queries on a view are automatically translated into operations on the underlying base tables
+Column Names: Columns inherit names from the subselect unless explicitly renamed
+
+3. The WITH CHECK OPTION
+Migrating Rows: Rows that enter or leave a view due to an update are called migrating rows
+Constraint: WITH CHECK OPTION prevents rows from migrating out of the view
+Example: If a view shows only staff in branch 'B003', WITH CHECK OPTION prevents updating a staff member’s branch to 'B002', because the row would disappear from the view
+
+4. Advantages and Disadvantages of Views
+
+Advantages	                                                                        Disadvantages
+Data Independence: View remains unchanged even if base tables change	            Update Restrictions: Many views (joins, aggregates) are not updatable
+Security: Users see only a subset of data	                                        Structure Restrictions: Not all base table changes are reflected
+Reduced Complexity: Simplifies multi-table queries	                                Performance: Complex views can be slow due to on-demand recalculation
+
+Key Takeaways:
+- Views are virtual, not physical tables (unless materialized)
+- WITH CHECK OPTION enforces integrity by preventing updates that move rows outside the view’s criteria
+(used When you want to enforce rules on data modifications through a view)

@@ -1,0 +1,70 @@
+SQL Aggregates – Quick Notes
+
+1. Aggregate Functions (ISO Standard)
+- Operate on a single column and return one value.
+- Functions:
+
+COUNT(column) → number of non-null values
+SUM(column) → sum of values (numeric only)
+AVG(column) → average of values (numeric only)
+MIN(column) → smallest value
+MAX(column) → largest value
+
+2. COUNT Variants
+COUNT(*) → counts all rows, including nulls and duplicates
+COUNT(column) → counts non-null values only
+
+Can use DISTINCT to eliminate duplicates:
+SELECT COUNT(DISTINCT propertyNo) AS count FROM Viewing;
+
+3. Rules
+COUNT, MIN, MAX → numeric & non-numeric columns
+SUM, AVG → numeric only
+Aggregate functions can be used only in SELECT list or HAVING, not in WHERE
+Illegal to mix non-aggregated columns with aggregates without GROUP BY:
+
+-- WRONG
+SELECT staffNo, fName, lName, MAX(salary) FROM Staff;
+
+4. Examples
+
+4.1 Count rows with condition
+-- How many properties cost less than 800 per month?
+SELECT COUNT(*) AS count
+FROM PropertyForRent
+WHERE rent < 800;
+
+
+4.2 Count rows in a specific column with condition
+-- How many properties with a staff member cost < 800?
+SELECT COUNT(staffNo) AS count
+FROM PropertyForRent
+WHERE rent < 800;
+
+
+4.3 Count distinct values
+-- How many different properties viewed in May 2025?
+SELECT COUNT(DISTINCT propertyNo) AS count
+FROM Viewing
+WHERE viewDate BETWEEN '2025-05-01' AND '2025-05-31';
+
+
+4.4 Count and Sum together
+-- Number of Managers and sum of their salaries
+SELECT COUNT(staffNo) AS count, SUM(salary) AS sum
+FROM Staff
+WHERE position = 'Manager';
+
+
+4.5 MIN, MAX, AVG together
+-- Minimum, maximum, and average staff salary
+SELECT MIN(salary) AS min,
+       MAX(salary) AS max,
+       AVG(salary) AS avg
+FROM Staff;
+
+5. Key Takeaways
+Aggregate functions ignore nulls (except COUNT(*))
+Can combine multiple aggregates in one query
+Always use DISTINCT if you want unique counts
+Cannot reference non-aggregated columns without GROUP BY

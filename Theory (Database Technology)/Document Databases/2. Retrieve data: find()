@@ -1,0 +1,67 @@
+
+
+1. The find() Method
+In MongoDB, find() is the equivalent of SQL’s SELECT statement
+
+Syntax:
+db.collection.find({ selection }, { projection })
+
+Selection: Equivalent to WHERE
+Projection: Equivalent to SELECT [columns]
+
+SQL → MQL Mapping:
+SQL Operation	MQL Syntax
+SELECT * FROM branch	db.branches.find({})
+SELECT city FROM branch	db.branches.find({}, { city: 1, _id: 0 })
+WHERE city = 'London'	db.branches.find({ city: "London" })
+
+
+2. Important Gotchas
+
+_id Field: Every document must have a unique _id. MongoDB creates one automatically if not provided
+Case Sensitivity: MQL is case-sensitive (branchNo ≠ branchno)
+Nesting: Query nested fields using dot notation in quotes (e.g., "address.city")
+
+
+
+
+
+
+
+3. Query Operators
+MQL uses operators prefixed with $ for comparisons and logic
+
+Comparison Operators:
+$eq, $ne
+$gt, $gte
+$lt, $lte
+$in
+
+Logical Operators:
+$and, $or, $not, $nor
+Example: Find properties with rent between 500 and 700
+
+db.property.find({
+  rent: { $gte: 500, $lte: 700 }
+})
+
+
+
+
+
+
+
+
+4. Array Operators
+MongoDB has special operators for querying arrays:
+$size: Match arrays of a specific length
+
+Example: { staff: { $size: 3 } }
+$exists: Check if a field exists
+$elemMatch: Match multiple criteria against a single element in an array
+
+Final Exam Summary (.txt):
+MQL: JSON-like query syntax
+find(): Two arguments → (1) filter, (2) projection
+Projection: 1 includes a field, 0 excludes it; _id included by default
+Operators: Always prefixed with $

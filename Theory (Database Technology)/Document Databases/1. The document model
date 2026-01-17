@@ -1,0 +1,54 @@
+1. Relational vs. Document Model
+
+Relational (SQL) Limitations:
+
+Fixed Schema: Adding or removing columns requires ALTER TABLE
+Scaling: Difficult to scale horizontally across many servers
+Mapping: Mismatch between application objects and database tables (ORM problem)
+Performance: Complex models often require many expensive JOIN operations
+
+Document (NoSQL) Advantages:
+Flexible Schema: Documents in the same collection can have different fields
+Self-Contained Data: Related data is stored together, reducing the need for joins
+
+
+
+
+
+2. JSON Fundamentals
+Definition: JavaScript Object Notation, a lightweight data format
+
+Structure:
+Objects (Maps): { "key": "value" }
+Arrays (Lists): [ "value1", "value2" ]
+Nesting: Objects and arrays can be nested to represent hierarchical data
+
+
+
+
+
+3. Document Databases (e.g., MongoDB)
+Storage: Uses JSON or BSON (binary JSON)
+
+Terminology Mapping:
+Table (SQL) ≈ Collection (MongoDB)
+Row (SQL) ≈ Document (MongoDB)
+Column (SQL) ≈ Field (MongoDB)
+
+Distribution Concepts:
+Sharding (scalability): Distributes data across multiple servers
+Replication (availability): Maintains copies of data on multiple servers
+
+
+
+
+
+4. Key Concepts
+Redundancy: Duplicate data is often stored to avoid joins and improve read performance
+Hybrid Models: Modern SQL databases (e.g., MySQL) support JSON columns
+CAP Theorem: Trade-off between Consistency, Availability, and Partition Tolerance in distributed systems
+
+
+SQL: Strict schema, tables, joins, ACID, vertical scaling
+NoSQL / JSON: Flexible schema, documents, embedded data, horizontal scaling (sharding)
+JSON Format: { "key": "value" } for objects, [ ] for lists

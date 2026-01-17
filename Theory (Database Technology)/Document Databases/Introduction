@@ -1,0 +1,39 @@
+Document Model and NoSQL (MongoDB & JSON)
+This module explains why document databases are used as an alternative to the relational (SQL) model.
+
+1. Limitations of the Relational Model
+Fixed Schema: Structural changes require ALTER TABLE and often lead to many NULL values for optional data
+Scalability: Hard to scale horizontally by adding more servers
+Impedance Mismatch: Applications use objects, databases use tables, requiring complex data mapping
+Complexity: Complex models depend on many resource-heavy JOIN operations
+
+2. JSON Fundamentals
+JSON (JavaScript Object Notation): A lightweight data-interchange format used by document databases
+
+Structure:
+Objects (Maps): { "key": "value" }
+Nesting: { "key": { "innerKey": "value" } }
+Arrays (Lists): [ "val1", "val2" ]
+Key Idea: Data that belongs together is stored together in a single structure
+
+3. Document Databases (e.g., MongoDB)
+Terminology Mapping:
+Table ≈ Collection (list of JSON documents)
+Row ≈ Document (single JSON object)
+
+Key Characteristics:
+Schema-less: Documents in the same collection can have different fields
+Performance: Embedded data reduces joins but increases redundancy
+Scalability:
+Sharding: Splits data across multiple servers
+Replication: Copies data for high availability
+
+4. SQL vs. NoSQL Trade-offs
+
+ACID vs. CAP:
+SQL emphasizes ACID (Atomicity, Consistency, Isolation, Durability)
+Distributed NoSQL systems deal with CAP (Consistency, Availability, Partition Tolerance)
+Hybrid Models: Modern relational databases (e.g., MySQL) support JSON columns, combining structure with flexibility
+
+Fundamental:
+The move to NoSQL is driven by the need for flexible schemas and horizontal scalability, which fixed-schema relational tables struggle to provide.

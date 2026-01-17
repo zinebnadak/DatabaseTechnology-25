@@ -1,0 +1,66 @@
+SQL ANY and ALL – Quick Notes
+1. Basics
+ANY and ALL are used with subqueries that return a single column of numbers.
+Compare outer query values against the set of values returned by the subquery.
+
+2. ANY
+Condition is true if satisfied by at least one value from the subquery.
+Empty subquery → ANY returns false.
+
+-- Staff whose salary is larger than at least one staff at branch B003
+SELECT staffNo, fName, lName, position, salary
+FROM Staff
+WHERE salary > ANY(SELECT salary
+                   FROM Staff
+                   WHERE branchNo = 'B003');
+
+
+Equivalent using MIN():
+SELECT staffNo, lName, salary, branchNo
+FROM Staff
+WHERE salary > (SELECT MIN(salary)
+                FROM Staff
+                WHERE branchNo = 'B003');
+
+3. ALL
+Condition is true only if satisfied by every value from the subquery.
+Empty subquery → ALL returns true.
+
+-- Staff whose salary >= every staff at branch B005
+SELECT staffNo, lName, salary, branchNo
+FROM Staff
+WHERE salary >= ALL(SELECT salary
+                    FROM Staff
+                    WHERE branchNo = 'B005');
+
+
+Equivalent using MAX():
+SELECT staffNo, lName, salary, branchNo
+FROM Staff
+WHERE salary >= (SELECT MAX(salary)
+                FROM Staff
+                WHERE branchNo = 'B003');
+
+4. Using Table Aliases in Subqueries
+Helps compare values within the same table.
+
+Example: find highest-paid staff per branch
+SELECT staffNo, lName, salary, branchNo
+FROM Staff s1
+WHERE salary >= ALL (SELECT salary
+                     FROM Staff s2
+                     WHERE s1.branchNo = s2.branchNo);
+
+
+Another example (specific branch B003):
+SELECT staffNo, fName, lName, position, salary
+FROM Staff
+WHERE salary >= ALL(SELECT salary
+                   FROM Staff
+                   WHERE branchNo = 'B003');
+
+5. Key Takeaways
+- ANY → satisfied if any value in subquery set meets condition
+- ALL → satisfied if all values in subquery set meet condition
+- Can be rewritten using MIN() for ANY and MAX() for ALL
+- Use table aliases when comparing rows within the same table

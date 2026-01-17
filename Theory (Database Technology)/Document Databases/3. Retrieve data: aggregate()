@@ -1,0 +1,65 @@
+1. Aggregation Pipelines
+A pipeline is a sequence of stages where the output of one stage becomes the input for the next, allowing complex transformations.
+
+Common      Pipeline                Stages:
+Stage	    SQL Equivalent	        Purpose
+$match	    WHERE / HAVING	        Filters documents based on a condition
+$group	    GROUP BY	            Groups documents by a field (_id)
+$project	SELECT	                Includes, excludes, or renames fields
+$sort	    ORDER BY	            Orders the results
+$unwind	    N/A	                    Flattens an array field into individual documents
+$lookup	    LEFT JOIN	            Combines documents from two collections
+
+2. Grouping and Accumulators
+When using $group, accumulators perform calculations on grouped data.
+
+Syntax:
+_id: "$field_to_group_by"
+
+
+Operators:
+$sum → totals values
+$avg → average
+$count → counts documents
+$min / $max → lowest/highest values
+
+Example (SQL vs. MQL):
+-- SQL
+SELECT city, COUNT(*) FROM property GROUP BY city;
+
+// MQL
+db.properties.aggregate([
+  { $group: { _id: "$address.city", count: { $count: {} } } }
+])
+
+
+3. Advanced Transformations: $unwind and $replaceRoot
+$unwind: Turns an array into multiple documents (one per element)
+Example: A branch with 5 staff → 5 separate documents
+$replaceRoot: Lifts a nested object (e.g., staff inside branch) to become the main document
+
+4. Updating Documents in MongoDB
+Unlike SQL’s single UPDATE, MongoDB differentiates updating one vs. many:
+updateOne() → updates the first matching document
+updateMany() → updates all matching documents
+
+Update Operators:
+$set → change/create a field
+$unset → remove a field
+$inc → increment a numeric value
+$mul → multiply a numeric value
+
+Example: Increase salary by 10% for all Assistants
+db.staff.updateMany(
+  { position: "Assistant" },
+  { $mul: { salary: 1.10 } }
+)
+
+
+
+
+Key Takeaways:
+Pipeline Stages: $match → $group → $sort
+Field Paths: Use "$fieldname" when referencing values inside stages
+Arrays: Use $unwind to work with individual elements
+Updates: Always use an operator ($set, $inc, $mul), otherwise the whole document may be replaced

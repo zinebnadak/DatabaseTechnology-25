@@ -1,0 +1,49 @@
+1. Multi-Table Queries (The Basics)
+When to Join: Use a join if the result columns come from more than one table
+Basic Syntax: Include multiple tables in the FROM clause and define the relationship in the WHERE clause
+Table Aliases: You can give tables shorthand names (aliases) in the FROM clause to shorten the query or resolve name ambiguities
+
+Example:
+FROM Client c, Viewing v
+WHERE c.clientNo = v.clientNo
+
+
+
+2. Inner Join Syntaxes
+SQL offers several ways to write the same join. These are equivalent to the Equijoin or Natural Join in relational algebra.
+
+Syntax Type	SQL Example	Notes
+Traditional	FROM TableA, TableB WHERE A.id = B.id	Uses WHERE to filter the Cartesian product
+JOIN ... ON	FROM TableA JOIN TableB ON A.id = B.id	Explicitly states the join condition
+JOIN ... USING	FROM TableA JOIN TableB USING (id)	Works if both tables have the exact same column name
+NATURAL JOIN	FROM TableA NATURAL JOIN TableB	Automatically joins on matching names and removes duplicate columns
+
+
+
+
+3. Important Rules for Joins
+Qualification: If a column name exists in both tables (e.g., clientNo), you must qualify it with the table name (e.g., Client.clientNo) to avoid errors
+Natural Join Constraint: Requires the join columns to have identical names in both tables
+Sorting & Grouping: You can use ORDER BY or GROUP BY on columns from any of the joined tables
+
+
+
+
+4. Advanced Join Scenarios
+Three-Table Joins: You must provide N-1 join conditions for N tables
+Example: To join Branch (b), Staff (s), and Property (p), you need:
+WHERE b.branchNo = s.branchNo AND s.staffNo = p.staffNo
+Joining Derived Tables: You can join a physical table to a subquery (temporary table) just like a normal table
+
+
+
+
+
+Example:
+SELECT ...
+FROM Property p, (SELECT city FROM ...) AS sub
+WHERE p.city = sub.city
+
+
+Key Tip:
+For a Natural Join, you do not need to qualify the join column (e.g., just SELECT branchNo instead of s.branchNo) because the duplicate column is automatically eliminated

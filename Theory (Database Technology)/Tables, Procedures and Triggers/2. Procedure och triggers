@@ -1,0 +1,73 @@
+----------- Stored Procedures and Triggers -----------
+These allow you to embed logic directly into the database, beyond simple queries.
+
+
+
+
+1. Stored Procedures
+Definition: A set of SQL commands stored in compiled form in the database to perform a specific function
+
+Benefits:
+Performance: The DBMS does not re-interpret the procedure on each call
+Usability: Reusable logic for application developers
+
+Parameters:
+IN: Input values (default)
+OUT: Return values (procedures do not have a standard return)
+INOUT: Values that can be modified by the procedure
+
+Execution:
+CALL ProcedureName(args);
+
+
+
+
+2. Triggers
+Definition: A special type of stored procedure that executes automatically when a database event occurs
+
+Events: INSERT, UPDATE, DELETE
+
+Timing:
+BEFORE: Runs before the change (validation)
+AFTER: Runs after the change (logging, side effects)
+
+Logic Keywords:
+OLD: Data before the change
+NEW: Data being inserted or updated
+
+
+
+
+3. Enforcing Integrity with SIGNAL
+Purpose: Abort an operation and raise a custom error message
+SQLSTATE '45000': Standard code for a user-defined exception
+
+Example Logic:
+IF NEW.salary < OLD.salary THEN
+  SIGNAL SQLSTATE '45000'
+  SET MESSAGE_TEXT = 'Salary reduction not allowed!';
+END IF;
+
+
+
+
+4. The DELIMITER Command
+The Problem: SQL normally ends statements with ;. Procedures contain multiple statements, causing premature termination
+The Solution: Temporarily change the delimiter while defining the procedure
+
+Syntax:
+DELIMITER //
+
+-- define procedure using ; internally
+
+//
+
+DELIMITER ;
+
+
+
+Absolute Fundamentals:
+- Stored Procedure: Manually executed with CALL
+- Trigger: Automatically executed on INSERT, UPDATE, or DELETE
+- Parameters: IN vs OUT vs INOUT
+- Exceptions: Use SIGNAL SQLSTATE '45000' to block invalid data

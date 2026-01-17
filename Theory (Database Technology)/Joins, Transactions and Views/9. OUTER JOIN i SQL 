@@ -1,0 +1,43 @@
+1. Concept of Outer Joins
+Purpose: Unlike Inner Joins, which only return matching rows, Outer Joins include rows that have no matching values in the join columns of the other table
+Missing Data: When a match is not found, the columns from the "missing" side of the join are filled with NULL values
+
+
+
+2. Types of SQL Outer Joins
+
+SQL Syntax	Functionality
+LEFT [OUTER] JOIN	Returns all rows from the left table (R), and matched rows from the right (S)
+RIGHT [OUTER] JOIN	Returns all rows from the right table (S), and matched rows from the left (R)
+FULL [OUTER] JOIN	Returns rows when there is a match in either the left or right table
+
+
+
+3. Practical Example (Status Reports)
+A common exam use case for Outer Joins is producing a status report where you need to see all items, even those with no activity (e.g., properties with no viewings)
+
+SQL Example:
+SELECT p.propertyNo, p.street, v.viewDate, v.comment
+FROM PropertyForRent p
+LEFT JOIN Viewing v ON p.propertyNo = v.propertyNo;
+
+Result:
+Properties with viewings appear normally
+Properties with no viewings (like PG16 or PL94) still appear in the list, but their viewDate and comment columns will show NULL
+
+
+
+4. Fundamental Rules
+
+Left vs. Right: TableA LEFT JOIN TableB is logically the same as TableB RIGHT JOIN TableA. The "Left" table is simply the one written first in the FROM clause
+Inner vs. Outer:
+Inner: Only shows the "intersections" (matches only)
+Outer: Shows the "intersections" plus the "leftovers" from one or both sides
+Keywords: The word OUTER is often optional in SQL; LEFT JOIN and LEFT OUTER JOIN perform the same operation
+
+
+
+Take Aways:
+Equijoin: Only rows where A.id = B.id
+Natural Join: Equijoin that auto-removes duplicate columns
+Left Outer Join: All of table R + matches from table S

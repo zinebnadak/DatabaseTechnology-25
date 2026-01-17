@@ -1,0 +1,35 @@
+1. What is a Transaction?
+Definition: An action, or series of actions, carried out by a single user or application program that accesses or changes the contents of the database
+Logical Unit of Work: A transaction is a logical unit of work on the database
+Transformations: A transaction transforms the database from one consistent state to another, although consistency may be violated during the transaction
+Outcomes: A transaction can either be committed (successfully completed) or aborted (failed and rolled back)
+
+
+2. ACID Properties
+To ensure integrity, every transaction must follow the ACID rules:
+
+Property	Meaning
+Atomicity	"All or Nothing." Either the entire transaction is performed or none of it is
+Consistency	A transaction must transform the database from one consistent state to another
+Isolation	Transactions execute independently; partial effects of incomplete transactions must not be visible to others
+Durability	Once a transaction is committed, its effects are permanent and must survive failures
+
+
+3. Transaction Boundaries (SQL)
+You control when a transaction starts and ends using specific commands:
+BEGIN TRANSACTION: Marks the start of the logical unit of work
+COMMIT: Signals successful completion; all changes are made permanent
+ROLLBACK: Signals failure; all changes since the last BEGIN TRANSACTION are undone
+
+
+4. Concurrency & Recovery
+Concurrency Control: Manages simultaneous database operations so they do not interfere with each other
+Database Recovery: Restores the database to a correct state after failures (system crash, media failure, software error)
+
+
+Key TakeAways:
+Joins: Relational Algebra symbols vs. SQL (JOIN, NATURAL JOIN, OUTER JOIN)
+Existence: Use EXISTS or NOT EXISTS for subquery checks
+ACID: Atomicity, Consistency, Isolation, Durability
+
+Commands: COMMIT saves, ROLLBACK undoes

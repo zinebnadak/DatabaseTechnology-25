@@ -1,3 +1,46 @@
+1. Cartesian Product (R × S)
+Definition: The concatenation of every tuple (row) in relation R with every tuple in relation S
+Outcome: Generates all possible combinations between two tables
+Key Math: If R has m rows and S has n rows, the product has m × n rows
+Limitation: It includes rows where keys do not match (e.g., Client.clientNo ≠ Viewing.clientNo)
+
+2. Theta Join (R ⋈_F S)
+Definition: A Cartesian product followed by a Selection operation based on a predicate (F)
+Formula: R ⋈_F S = σ_F (R × S)
+Predicate (F): Uses comparison operators like =, <, >, ≤, ≥, ≠
+Equijoin: A specific Theta join where the predicate (F) only uses the equality operator (=)
+Degree: The number of columns in the result is the sum of the columns in R and S
+
+3. Natural Join (R ⋈ S)
+Definition: An Equijoin of two relations over all common attributes
+Key Feature: Unlike an Equijoin, it eliminates duplicate columns. One occurrence of each common attribute is removed from the result
+
+4. Outer Joins
+These are used to preserve data from tables even when there is no match in the other table.
+Keep all rows from one or both tables, even if there’s no match in the other table.
+Missing values from the table without a match are filled with NULL.
+
+Join Type	Symbol	Fundamental Behavior
+Left Outer	R ⟕ S	Includes all tuples from the left relation (R), even if they have no match in S. Missing values are filled with NULL
+Right Outer	R ⟖ S	Includes all tuples from the right relation (S), even if they have no match in R
+Full Outer	R ⟗ S	Includes all tuples from both relations, matching where possible and using NULLs where no match exists
+
+Take Aways:
+- Cartesian Product: Total combinations (m × n)
+- Theta Join: Product + Selection (σ)
+- Natural Join: Equijoin - Duplicate columns (combines two tables based on all columns that have the same name.)
+- Outer Join: Keeps unmatched rows (Left = keep Left, Right = keep Right)
+
+
+
+
+
+
+
+
+
+
+
 
 
 Next: we will work with Joins in SELECT, EXISTS/NOT EXISTS, transactions and data modification, and views

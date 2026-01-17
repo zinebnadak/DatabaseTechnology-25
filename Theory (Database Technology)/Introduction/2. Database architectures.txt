@@ -3,8 +3,8 @@ Quick notes/review
 - both MySQL and Mongo db will come but more MySQL
 - goal in this cousre is to WORK WITH a already availiable database - then next in another course design from the absolute beginning
 - Mongo db is a document database
-- MySQL is a relational dtabase
-- In this couse we will mostly work in Conceptual level
+- MySQL is a relational database
+- In this course we will mostly work in Conceptual level
 
 Database Approach:
 - A database is a structured system for storing, organizing, and retrieving data efficiently.

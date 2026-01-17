@@ -1,5 +1,5 @@
 
------------- Relational Algebra and Relational Calculus (theoretical understanding) ------------
+------------ DML: Relational Algebra and Relational Calculus (theoretical understanding) ------------
 
 Relational Algebra Fundamentally:
 
@@ -12,12 +12,6 @@ Relational Calculus Fundamentally TWO flavors:
 Tuple relational calculus (TRC): You describe properties of rows you want. E.g., “Give me all patients whose age > 60.”
 Domain relational calculus (DRC): You describe properties of individual values (columns) you want.
 Purpose: It’s the theoretical foundation behind SQL’s declarative style. SQL is closer to relational calculus than algebra, because you say what you want, not how to get it.
-
-
-
-
-
-
 
 
 Two most basic operations in RELATIONAL ALGEBRA:

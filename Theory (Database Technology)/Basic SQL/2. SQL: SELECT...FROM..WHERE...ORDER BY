@@ -1,1 +1,104 @@
-lektion 3
+1. SELECT Basics
+
+Retrieve specific columns:
+SELECT column1, column2 FROM TableName;
+
+Retrieve all columns:
+SELECT * FROM TableName;
+
+
+
+
+2. DISTINCT
+
+Remove duplicates:
+SELECT DISTINCT column FROM TableName;
+
+
+
+
+3. Calculated Columns & Alias
+
+Create a new column and rename it:
+SELECT column1, column2, column3*12 AS annualSalary
+FROM TableName;
+
+
+
+
+4. Comparison Operators
+
+Greater than, less than, etc.:
+SELECT * FROM Staff WHERE salary > 3500;
+SELECT * FROM Staff WHERE salary >= 5000 AND salary <= 6000;
+
+
+
+
+5. Compound Conditions
+
+Multiple criteria with OR / AND:
+SELECT * FROM Branch WHERE city='London' OR city='Glasgow';
+
+Negation examples:
+SELECT * FROM Staff WHERE salary NOT BETWEEN 5000 AND 6000;
+SELECT * FROM Staff WHERE position NOT IN ('Manager', 'Supervisor');
+
+
+
+
+6. Set Membership
+
+Check multiple specific values:
+SELECT * FROM Staff WHERE position IN ('Manager', 'Supervisor');
+
+Negated version:
+SELECT * FROM Staff WHERE position NOT IN ('Manager', 'Supervisor');
+
+
+
+
+7. Pattern Matching (LIKE)
+
+% = any sequence of characters
+_ = any single character
+SELECT * FROM PrivateOwner WHERE address LIKE '%Glasgow%';
+
+
+
+
+8. NULL Handling
+
+Check for missing values:
+SELECT * FROM Viewing WHERE comment IS NULL;
+
+Check for present values:
+SELECT * FROM Viewing WHERE comment IS NOT NULL;
+
+
+
+
+9. Ordering Results
+
+Single column:
+SELECT * FROM Staff ORDER BY salary DESC;
+
+Multiple columns (primary + secondary sort):
+SELECT * FROM PropertyForRent ORDER BY type ASC, rent DESC;
+
+String ordering with collation:
+ORDER BY column COLLATE latin1_general_cs;
+
+
+
+
+10. Other Notes
+- ANSI SQL strings: single quotes '...'
+- MySQL also allows double quotes "..."
+- BETWEEN includes boundary values
+- ASC = ascending, DESC = descending
+
+
+
+
+Theory 8:00 lektion 3

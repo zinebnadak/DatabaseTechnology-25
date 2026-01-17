@@ -1,0 +1,51 @@
+1. What is DDL?
+Definition: SQL statements used to create, destroy, and modify database objects such as schemas, tables, views, and indexes
+
+Core Commands:
+CREATE: Build a new object
+ALTER: Change an existing object’s structure
+DROP: Permanently delete an object
+
+2. Table Creation (CREATE TABLE)
+Syntax: Define the table name followed by columns, data types, and constraints
+
+Common Data Types:
+INTEGER: Whole numbers
+VARCHAR(size): Variable-length strings
+DECIMAL(precision, scale): Exact numeric values (e.g., money)
+
+Constraints:
+NOT NULL: Column cannot be empty
+PRIMARY KEY: Uniquely identifies each row
+FOREIGN KEY: References a primary key in another table (referential integrity)
+DEFAULT: Sets a value when none is provided
+
+3. Modifying and Deleting Tables
+ALTER TABLE: Add, remove, or modify columns
+
+Example:
+ALTER TABLE Staff ADD email VARCHAR(100);
+DROP TABLE: Deletes the table and all its data
+RESTRICT: Drop fails if other objects depend on the table
+CASCADE: Automatically drops all dependent objects
+
+4. Indexes (CREATE INDEX)
+Purpose: Speed up data retrieval, similar to an index in a book
+
+Trade-off:
+Pro: Faster searches and queries
+Con: Slower inserts and updates because the index must be maintained
+Automatic Indexes: Most DBMSs automatically create indexes for Primary Keys and often Foreign Keys
+
+5. Schemas
+Definition: A named collection of related database objects
+
+Command:
+CREATE SCHEMA Name;
+Analogy: A schema is like a folder or container for tables and views
+
+
+Key Takeaways:
+DDL vs. DML: DDL changes structure; DML changes data
+Integrity: DDL defines the rules (Primary Keys, Foreign Keys)
+Efficiency: Indexes improve performance but increase storage and update cost
